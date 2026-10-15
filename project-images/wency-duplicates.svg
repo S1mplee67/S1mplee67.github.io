@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="248" viewBox="0 0 1200 248" role="img" aria-labelledby="title desc">
+<title id="title">Duplicates by S1mplee67 — animated photo comparison diagram</title><desc id="desc">Conceptual animated diagram: two photos are scanned, muted signals travel to a local aHash, dHash and RGB comparison, and the progress meter fills before restarting. Illustrative visualization, not a live application screenshot.</desc>
+<defs>
+<pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#8DA6A0" stroke-opacity=".09"/></pattern>
+<clipPath id="clipA"><rect x="95" y="89" width="165" height="83" rx="3"/></clipPath>
+<clipPath id="clipB"><rect x="940" y="89" width="165" height="83" rx="3"/></clipPath>
+<linearGradient id="scan"><stop stop-color="#A6CDBE" stop-opacity="0"/><stop offset=".5" stop-color="#A6CDBE" stop-opacity=".35"/><stop offset="1" stop-color="#A6CDBE" stop-opacity="0"/></linearGradient>
+</defs>
+<style>
+@keyframes flow{to{stroke-dashoffset:-48}}
+@keyframes breathe{0%,100%{stroke-opacity:.58}50%{stroke-opacity:1}}
+@keyframes cursor{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes slightFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+.stream{stroke-dasharray:9 7;animation:flow 2.8s linear infinite}
+.compare{animation:breathe 4.2s ease-in-out infinite}
+.status{animation:cursor 3.8s ease-in-out infinite}
+.photo{animation:slightFloat 7s ease-in-out infinite}
+.photo.b{animation-delay:-3.5s}
+.still-meter{display:none}
+@media(prefers-reduced-motion:reduce){.stream,.compare,.status,.photo{animation:none}.motion-only{visibility:hidden}.still-meter{display:inline}}
+</style>
+<rect width="1200" height="248" rx="10" fill="#182125"/><rect width="1200" height="248" rx="10" fill="url(#grid)"/>
+<rect x="1" y="1" width="1198" height="246" rx="9" fill="none" stroke="#3D5552"/>
+<rect x="1" y="1" width="1198" height="37" rx="9" fill="#232E2F"/><path d="M0 38H1200" stroke="#4E6863"/>
+<circle cx="21" cy="20" r="4" fill="#DDA269"/><circle cx="36" cy="20" r="4" fill="#84B6AD"/><circle cx="51" cy="20" r="4" fill="#627E7E"/>
+<text x="79" y="25" font-family="Consolas,monospace" fill="#B7CDC4" font-size="13">duplicates-by-s1mplee67 / diagram</text>
+<text x="1176" y="25" text-anchor="end" font-family="Consolas,monospace" fill="#819B95" font-size="11">OFFLINE  /  C#  /  .NET 4.8</text>
+<g class="photo a">
+<rect x="76" y="75" width="203" height="134" rx="7" fill="#263538" stroke="#63857D"/>
+<rect x="95" y="89" width="165" height="83" rx="3" fill="#365056"/>
+<circle cx="213" cy="107" r="11" fill="#D0B58C"/>
+<path d="M98 163l42-40 28 24 28-20 60 36" stroke="#A4C6B8" stroke-width="4" fill="none" stroke-linejoin="round"/>
+<path d="M98 163l32-22 34 18 51-35 41 39" fill="none" stroke="#668F84" stroke-width="3"/>
+<g clip-path="url(#clipA)" class="motion-only">
+<rect x="95" y="89" width="165" height="13" fill="url(#scan)"><animate attributeName="y" values="89;89;161;161;89" keyTimes="0;.12;.77;.89;1" dur="5.8s" repeatCount="indefinite"/></rect>
+<path d="M95 92h165" stroke="#BCDACC" stroke-width="1.6" stroke-opacity=".68"><animateTransform attributeName="transform" type="translate" values="0 -3;0 -3;0 69;0 69;0 -3" keyTimes="0;.12;.77;.89;1" dur="5.8s" repeatCount="indefinite"/></path>
+</g>
+<text x="177" y="195" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#ADBFB8">image A</text>
+</g>
+<g class="photo b">
+<rect x="921" y="75" width="203" height="134" rx="7" fill="#263538" stroke="#63857D"/>
+<rect x="940" y="89" width="165" height="83" rx="3" fill="#365056"/>
+<circle cx="1056" cy="107" r="11" fill="#D0B58C"/>
+<path d="M943 163l42-40 28 24 28-20 60 36" stroke="#A4C6B8" stroke-width="4" fill="none" stroke-linejoin="round"/>
+<path d="M943 163l32-22 34 18 51-35 41 39" fill="none" stroke="#668F84" stroke-width="3"/>
+<g clip-path="url(#clipB)" class="motion-only">
+<rect x="940" y="89" width="165" height="13" fill="url(#scan)"><animate attributeName="y" values="89;89;161;161;89" keyTimes="0;.22;.8;.91;1" dur="5.8s" repeatCount="indefinite"/></rect>
+<path d="M940 92h165" stroke="#BCDACC" stroke-width="1.6" stroke-opacity=".68"><animateTransform attributeName="transform" type="translate" values="0 -3;0 -3;0 69;0 69;0 -3" keyTimes="0;.22;.8;.91;1" dur="5.8s" repeatCount="indefinite"/></path>
+</g>
+<text x="1022" y="195" text-anchor="middle" font-family="Consolas,monospace" font-size="11" fill="#ADBFB8">image B</text>
+</g>
+<path d="M279 137H382M818 137H921" fill="none" stroke="#667F78" stroke-width="2"/>
+<path d="M279 137H382M818 137H921" fill="none" stroke="#B5CDBF" stroke-width="2" class="stream"/>
+<g class="motion-only" fill="#DDA269">
+<circle cx="279" cy="137" r="4"><animate attributeName="cx" values="279;279;382;382;279" keyTimes="0;.10;.52;.87;1" dur="5.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.10;.49;.60;1" dur="5.8s" repeatCount="indefinite"/></circle>
+<circle cx="921" cy="137" r="4"><animate attributeName="cx" values="921;921;818;818;921" keyTimes="0;.18;.60;.87;1" dur="5.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;.18;.57;.68;1" dur="5.8s" repeatCount="indefinite"/></circle>
+</g>
+<path d="M373 131l9 6-9 6M912 131l9 6-9 6" stroke="#DDA269" stroke-width="2" fill="none"/>
+<rect x="383" y="76" width="435" height="131" rx="7" fill="#1D292B" stroke="#DDA269" stroke-width="1.7" stroke-opacity=".75" class="compare"/>
+<text x="600" y="105" text-anchor="middle" font-family="Consolas,monospace" font-size="13" fill="#DDA269" letter-spacing="1.3">COMPARE LOCALLY</text>
+<text x="600" y="148" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="23" font-weight="bold" fill="#F0E7DA">aHash  /  dHash  /  RGB</text>
+<text x="600" y="172" text-anchor="middle" font-family="Consolas,monospace" font-size="11.5" fill="#93ADA5">similarity check • no cloud upload</text>
+<rect x="417" y="189" width="366" height="4" rx="2" fill="#364A45"/>
+<rect x="417" y="189" width="270" height="4" rx="2" fill="#DDA269" class="still-meter"/>
+<rect x="417" y="189" width="42" height="4" rx="2" fill="#DDA269" class="motion-only"><animate attributeName="width" values="42;42;164;308;366;366;42" keyTimes="0;.12;.36;.61;.78;.91;1" dur="5.8s" repeatCount="indefinite"/></rect>
+<text x="600" y="231" text-anchor="middle" font-family="Consolas,monospace" font-size="10.5" fill="#8DAAA0">VISUALIZATION ONLY  /  PROGRESS IS ILLUSTRATIVE</text>
+<circle cx="791" cy="105" r="3.5" fill="#8FC0A6" class="status"/>
+</svg>

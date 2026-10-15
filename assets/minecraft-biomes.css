@@ -1,0 +1,427 @@
+/* Wency portfolio day palettes: voxel-inspired accents, all shapes drawn in CSS.
+   Dark mode is never targeted or recolored. */
+html.light[data-wency-biome] {
+  --bg: #e6ebe2;
+  --fg: #29392f;
+  --muted: #506357;
+  --soft: #697a6e;
+  --line: rgba(41, 62, 50, .22);
+  --stripe: rgba(52, 83, 60, .065);
+  --hover: rgba(68, 105, 74, .095);
+  --card: #edf0e9;
+  --chip: #dbe5d9;
+  --neon-color: #597a61;
+  --neon-glow: rgba(70, 112, 83, .28);
+  --wmb-accent: #839e78;
+  --wmb-shadow: #627963;
+  --wmb-sky: #dce5db;
+}
+
+html.light[data-wency-biome="cherry"] {
+  --bg: #e9e0e3;
+  --fg: #40343e;
+  --muted: #685763;
+  --soft: #83727e;
+  --line: rgba(92, 64, 80, .20);
+  --stripe: rgba(122, 78, 98, .06);
+  --hover: rgba(130, 86, 109, .09);
+  --card: #f0e9ec;
+  --chip: #e8d9df;
+  --neon-color: #9b7387;
+  --neon-glow: rgba(154, 115, 135, .25);
+  --wmb-accent: #b38f9b;
+  --wmb-shadow: #8f6e7e;
+  --wmb-sky: #e9dce5;
+}
+
+html.light[data-wency-biome="taiga"] {
+  --bg: #e1e8ea;
+  --fg: #304047;
+  --muted: #526671;
+  --soft: #72848b;
+  --line: rgba(48, 74, 88, .22);
+  --stripe: rgba(68, 98, 112, .065);
+  --hover: rgba(83, 117, 131, .095);
+  --card: #eaf0f0;
+  --chip: #d8e2e5;
+  --neon-color: #6e909f;
+  --neon-glow: rgba(94, 130, 146, .24);
+  --wmb-accent: #879ca7;
+  --wmb-shadow: #637d88;
+  --wmb-sky: #d7e3e8;
+}
+
+html.light[data-wency-biome="desert"] {
+  --bg: #e9e2d2;
+  --fg: #413a2c;
+  --muted: #695e49;
+  --soft: #847660;
+  --line: rgba(98, 84, 56, .22);
+  --stripe: rgba(120, 93, 44, .055);
+  --hover: rgba(154, 116, 54, .09);
+  --card: #f0e9dd;
+  --chip: #e7dac2;
+  --neon-color: #a08961;
+  --neon-glow: rgba(158, 132, 88, .22);
+  --wmb-accent: #b9a77c;
+  --wmb-shadow: #917c53;
+  --wmb-sky: #eee3ca;
+}
+
+html.light[data-wency-biome="lush"] {
+  --bg: #dfe9e3;
+  --fg: #29433a;
+  --muted: #4c695c;
+  --soft: #688577;
+  --line: rgba(38, 81, 63, .22);
+  --stripe: rgba(48, 104, 78, .065);
+  --hover: rgba(61, 130, 91, .085);
+  --card: #e8f0e9;
+  --chip: #d3e5da;
+  --neon-color: #628a75;
+  --neon-glow: rgba(68, 130, 96, .23);
+  --wmb-accent: #779b8b;
+  --wmb-shadow: #568273;
+  --wmb-sky: #d5e5dc;
+}
+
+html.light[data-wency-biome="nether"] {
+  --bg: #e4d9d6;
+  --fg: #443331;
+  --muted: #6b5451;
+  --soft: #846c68;
+  --line: rgba(99, 58, 52, .22);
+  --stripe: rgba(124, 70, 60, .06);
+  --hover: rgba(138, 71, 65, .09);
+  --card: #ede2df;
+  --chip: #e5d3cf;
+  --neon-color: #986865;
+  --neon-glow: rgba(142, 92, 88, .25);
+  --wmb-accent: #ab827d;
+  --wmb-shadow: #8f6662;
+  --wmb-sky: #e4d0cb;
+}
+
+html.light[data-wency-biome="end"] {
+  --bg: #e5e1e9;
+  --fg: #3b3748;
+  --muted: #625d71;
+  --soft: #797487;
+  --line: rgba(77, 67, 101, .21);
+  --stripe: rgba(87, 74, 114, .063);
+  --hover: rgba(107, 90, 128, .085);
+  --card: #ece8f0;
+  --chip: #dfdbe7;
+  --neon-color: #827795;
+  --neon-glow: rgba(125, 107, 152, .23);
+  --wmb-accent: #a19bad;
+  --wmb-shadow: #7b758e;
+  --wmb-sky: #ded9e7;
+}
+
+html.light[data-wency-biome="sift"] {
+  --bg: #e4e2d9;
+  --fg: #3c3d35;
+  --muted: #616256;
+  --soft: #7c7c70;
+  --line: rgba(79, 80, 65, .22);
+  --stripe: rgba(110, 106, 81, .06);
+  --hover: rgba(109, 106, 80, .09);
+  --card: #eceae1;
+  --chip: #dfded1;
+  --neon-color: #858575;
+  --neon-glow: rgba(126, 127, 106, .23);
+  --wmb-accent: #a19d8c;
+  --wmb-shadow: #7e7969;
+  --wmb-sky: #e1dfd4;
+}
+
+html.light[data-wency-biome="sift-meadows"] {
+  --bg: #e2e8de;
+  --fg: #344037;
+  --muted: #58685b;
+  --soft: #748174;
+  --line: rgba(63, 84, 66, .20);
+  --stripe: rgba(78, 111, 83, .06);
+  --hover: rgba(104, 136, 99, .09);
+  --card: #ebefe8;
+  --chip: #dce5d7;
+  --neon-color: #788e70;
+  --neon-glow: rgba(116, 146, 108, .22);
+  --wmb-accent: #93a38a;
+  --wmb-shadow: #737f6a;
+  --wmb-sky: #dbe5d8;
+}
+
+html.light[data-wency-biome="sift-carapace"] {
+  --bg: #e5e0dd;
+  --fg: #433a38;
+  --muted: #685d59;
+  --soft: #827773;
+  --line: rgba(91, 76, 70, .21);
+  --stripe: rgba(112, 92, 84, .06);
+  --hover: rgba(121, 96, 88, .09);
+  --card: #ede8e4;
+  --chip: #e2d9d5;
+  --neon-color: #8d7c76;
+  --neon-glow: rgba(134, 114, 105, .22);
+  --wmb-accent: #99938e;
+  --wmb-shadow: #79736d;
+  --wmb-sky: #e5ddd8;
+}
+
+/* Small stepped outlines and grass-like tile marks, with no texture downloads. */
+html.light[data-wency-biome] body {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(90deg, transparent 95%, var(--stripe) 95%),
+    linear-gradient(0deg, transparent 95%, var(--stripe) 95%);
+  background-size: 32px 32px;
+}
+
+html.light[data-wency-biome] header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  pointer-events: none;
+  opacity: .20;
+  background: repeating-linear-gradient(90deg, var(--wmb-accent) 0 8px, transparent 8px 12px, var(--wmb-shadow) 12px 16px, transparent 16px 30px);
+}
+
+html.light[data-wency-biome] .bg-stripes {
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 31px, var(--stripe) 31px 32px),
+    repeating-linear-gradient(0deg, transparent 0 31px, var(--stripe) 31px 32px);
+}
+
+/* The selector is a fixed overlay beside the React header theme button.
+   Positioning never adds another child to React's navigation flex row. */
+#wency-biome-picker,
+#wency-biome-picker * {
+  box-sizing: border-box;
+}
+
+#wency-biome-picker {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 103px;
+  max-width: calc(100vw - 24px);
+  font: 500 10px/1.3 'JetBrains Mono', Consolas, monospace;
+  color: var(--fg, #263b30);
+  text-align: left;
+  isolation: isolate;
+}
+
+html.light[data-wency-biome] #wency-biome-picker:not([hidden]) {
+  display: block;
+}
+
+#wency-biome-picker [hidden] {
+  display: none !important;
+}
+
+#wency-biome-picker .wmb-trigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 30px;
+  padding: 5px 7px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 0 3px 10px rgba(44, 54, 44, .08);
+  cursor: pointer;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#wency-biome-picker .wmb-trigger:hover,
+#wency-biome-picker .wmb-trigger[aria-expanded="true"] {
+  background: var(--chip);
+  border-color: var(--wmb-shadow);
+}
+
+#wency-biome-picker .wmb-trigger-block,
+#wency-biome-picker .wmb-choice-swatch {
+  flex: 0 0 auto;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--wmb-shadow);
+  background:
+    linear-gradient(90deg, transparent 0 50%, rgba(255,255,255,.2) 50% 100%),
+    linear-gradient(0deg, rgba(0,0,0,.13) 0 42%, transparent 42% 100%),
+    var(--wmb-current-swatch, #839e78);
+  background-size: 7px 7px, 14px 14px, auto;
+  image-rendering: pixelated;
+}
+
+#wency-biome-picker .wmb-trigger-name {
+  flex: 1 1 auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#wency-biome-picker .wmb-trigger-arrow {
+  flex: 0 0 auto;
+  font-size: 10px;
+  color: var(--muted);
+}
+
+#wency-biome-picker .wmb-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: min(316px, calc(100vw - 24px));
+  max-height: min(520px, calc(100dvh - 115px));
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--card);
+  color: var(--fg);
+  box-shadow: 0 16px 36px rgba(30, 39, 33, .18), 0 4px 9px rgba(30, 39, 33, .07);
+  scrollbar-width: thin;
+}
+
+#wency-biome-picker .wmb-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 2px 8px;
+  border-bottom: 1px dashed var(--line);
+}
+
+#wency-biome-picker .wmb-menu-title {
+  color: var(--fg);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .055em;
+}
+
+#wency-biome-picker .wmb-menu-badge {
+  color: var(--muted);
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+#wency-biome-picker .wmb-group {
+  padding-top: 10px;
+}
+
+#wency-biome-picker .wmb-group-title {
+  margin: 0 0 7px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+#wency-biome-picker .wmb-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+}
+
+#wency-biome-picker .wmb-choice {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  min-height: 43px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: var(--bg);
+  color: var(--fg);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+#wency-biome-picker .wmb-choice:hover,
+#wency-biome-picker .wmb-choice[aria-pressed="true"] {
+  border-color: var(--wmb-shadow);
+  background: var(--chip);
+}
+
+#wency-biome-picker .wmb-choice[aria-pressed="true"] {
+  box-shadow: inset 2px 0 var(--wmb-accent);
+}
+
+#wency-biome-picker .wmb-choice-swatch {
+  width: 19px;
+  height: 19px;
+  background-color: var(--wmb-choice-swatch);
+  background-image:
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255,.23) 50%),
+    linear-gradient(0deg, rgba(0,0,0,.11) 45%, transparent 45%);
+  background-size: 9px 9px, 19px 19px;
+}
+
+#wency-biome-picker .wmb-choice-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 3px;
+}
+
+#wency-biome-picker .wmb-choice-copy strong {
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+#wency-biome-picker .wmb-choice-copy small {
+  font-size: 9px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+#wency-biome-picker .wmb-footnote {
+  margin: 12px 0 0;
+  padding-top: 9px;
+  border-top: 1px dashed var(--line);
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+#wency-biome-picker button:focus-visible {
+  outline: 2px solid var(--wmb-shadow);
+  outline-offset: 2px;
+}
+
+@media (max-width: 639px) {
+  #wency-biome-picker { width: 32px; }
+  #wency-biome-picker .wmb-trigger {
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+  }
+  #wency-biome-picker .wmb-trigger-block { width: 15px; height: 15px; }
+  #wency-biome-picker .wmb-trigger-name,
+  #wency-biome-picker .wmb-trigger-arrow { display: none; }
+  #wency-biome-picker .wmb-menu { width: min(296px, calc(100vw - 24px)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #wency-biome-picker *,
+  #wency-biome-picker *::before,
+  #wency-biome-picker *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
