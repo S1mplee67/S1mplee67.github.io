@@ -44,6 +44,24 @@
     };
   }
 
+  // React controls these fields, so a plain form.reset() would be undone on
+  // the next render. Use native setters and bubbling input events to update
+  // React's state, allowing each field change to settle before the next one.
+  async function clearDeliveredFields(form) {
+    for (const selector of ['input[type="text"]', 'input[type="email"]', "textarea"]) {
+      const field = form.querySelector(selector);
+      if (!field) continue;
+      const prototype = field instanceof HTMLTextAreaElement
+        ? HTMLTextAreaElement.prototype
+        : HTMLInputElement.prototype;
+      const setter = Object.getOwnPropertyDescriptor(prototype, "value")?.set;
+      if (setter) setter.call(field, "");
+      else field.value = "";
+      field.dispatchEvent(new Event("input", { bubbles: true }));
+      await new Promise(resolve => setTimeout(resolve, 0));
+    }
+  }
+
   function showDraftLink(form, fields) {
     const note = setStatus(
       form,
@@ -124,8 +142,10 @@
         throw new Error(serviceError(data));
       }
 
+      // Only clear after Formspree returns a successful HTTP response.
+      // If the request fails, the visitor's original text stays in place.
+      await clearDeliveredFields(form);
       setStatus(form, "Message sent successfully. Thanks for reaching out!", "success");
-      // Preserve the typed message; do not clear unless the server confirms it.
       if (button) button.setAttribute("aria-label", "Message sent");
     } catch (error) {
       const message = error?.name === "AbortError"
