@@ -193,6 +193,27 @@
   margin: 6px 0 0;
 }
 
+#wency-bgm .wbgm-credits-link {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--wbgm-muted);
+  font: 500 9px/1.5 'JetBrains Mono', Consolas, monospace;
+  text-decoration: underline;
+  text-decoration-color: var(--wbgm-border);
+  text-underline-offset: 3px;
+}
+
+#wency-bgm .wbgm-credits-link:hover,
+#wency-bgm .wbgm-credits-link:focus-visible {
+  color: var(--wbgm-ink);
+  text-decoration-color: var(--wbgm-accent);
+}
+
+#wency-bgm .wbgm-credits-link:focus-visible {
+  outline: 2px solid var(--wbgm-accent);
+  outline-offset: 2px;
+}
+
 #wency-bgm .wbgm-visualizer,
 #wency-bgm .wbgm-eq,
 #wency-bgm .wbgm-bars {

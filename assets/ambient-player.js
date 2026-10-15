@@ -1,5 +1,5 @@
-/* Wency's optional local background-music player.
- * Plays full locally supplied C418 tracks and shuffles when each song ends.
+/* Wency's credited Creative Commons background-music player.
+ * Plays full Scott Buckley tracks and shuffles when each song ends.
  * Browsers may require a real user gesture before unmuted playback is allowed.
  */
 (() => {
@@ -9,13 +9,13 @@
   window.__wencyAmbientPlayerInitialized = true;
 
   const TRACKS = [
-    { title: "Mice on Venus", artist: "C418", file: "/assets/music/c418-mice-on-venus.mp3" },
-    { title: "Sweden", artist: "C418", file: "/assets/music/c418-sweden.mp3" },
-    { title: "Aria Math", artist: "C418", file: "/assets/music/c418-aria-math.mp3" }
+    { title: "Aurora", artist: "Scott Buckley", file: "/assets/music/scott-buckley-aurora.mp3" },
+    { title: "Snowfall", artist: "Scott Buckley", file: "/assets/music/scott-buckley-snowfall.mp3" },
+    { title: "Cirrus", artist: "Scott Buckley", file: "/assets/music/scott-buckley-cirrus.mp3" }
   ];
   const STORAGE_KEY = "wency:ambient-player:v1";
   const DEFAULT_VOLUME = 0.16;
-  const FALLBACK_STATUS = "Add 3 C418 MP3s to enable";
+  const FALLBACK_STATUS = "Licensed music temporarily unavailable";
 
   function readPrefs() {
     try {
@@ -106,7 +106,7 @@
     const body = node("div", "wbgm-body");
     body.id = "wbgm-body";
     const track = node("div", "wbgm-track", "Checking local songs…");
-    const artist = node("div", "wbgm-artist", "C418 • full songs");
+    const artist = node("div", "wbgm-artist", "Scott Buckley • CC BY 4.0");
     const visualizer = node("div", "wbgm-visualizer");
     visualizer.setAttribute("aria-hidden", "true");
     for (let i = 0; i < 5; i++) visualizer.append(node("span", "wbgm-bar"));
@@ -132,18 +132,23 @@
     volumeRow.append(volumeLabel, volume, volumeValue);
     controls.append(play, skip, mute);
 
-    const status = node("p", "wbgm-status", "Checking local C418 tracks…");
+    const status = node("p", "wbgm-status", "Checking music tracks…");
     status.setAttribute("role", "status");
     status.setAttribute("aria-live", "polite");
     status.setAttribute("aria-atomic", "true");
     const setup = node("p", "wbgm-setup");
     const details = node("details", "wbgm-details");
-    details.append(node("summary", "", "Music file setup"));
-    details.append(node("p", "", "Add your own MP3 files to www.harshitr.me/assets/music/ using these exact names:"));
+    details.append(node("summary", "", "Track availability"));
+    details.append(node("p", "", "Expected Creative Commons MP3 files:"));
     const fileList = node("ul");
     TRACKS.forEach(item => fileList.append(node("li", "", item.file.split("/").pop())));
     details.append(fileList);
-    body.append(track, artist, visualizer, controls, volumeRow, status, setup, details);
+    const credit = node("a", "wbgm-credits-link", "Music credits · CC BY 4.0 ↗");
+    credit.href = "/music-credits.html";
+    credit.target = "_blank";
+    credit.rel = "noopener noreferrer";
+    credit.setAttribute("aria-label", "Music credits, sources and Creative Commons license (opens in a new tab)");
+    body.append(track, artist, visualizer, controls, volumeRow, status, credit, setup, details);
     panel.append(header, body);
     root.append(panel);
     document.body.append(root);
@@ -186,14 +191,14 @@
       const usable = available.filter(i => !failed.has(i));
       if (usable.length === 0) {
         track.textContent = "No songs loaded";
-        artist.textContent = "C418 • local MP3s";
+        artist.textContent = "Scott Buckley • CC BY 4.0";
         setup.textContent = FALLBACK_STATUS;
         details.hidden = false;
         setState(available.length ? "error" : "missing",
           available.length ? "Audio files could not be played." : FALLBACK_STATUS);
       } else {
         const missingCount = TRACKS.length - available.length;
-        setup.textContent = missingCount ? missingCount + " of 3 C418 files missing." : "";
+        setup.textContent = missingCount ? missingCount + " of 3 licensed music files missing." : "";
         details.hidden = missingCount === 0;
       }
     }
@@ -410,7 +415,7 @@
       collapse.textContent = collapsed ? "+" : "−";
       collapse.setAttribute("aria-expanded", String(!collapsed));
       collapse.setAttribute("aria-label", collapsed && state === "missing"
-        ? "Expand music player to view C418 file setup"
+        ? "Expand music player to view music information"
         : collapsed ? "Expand music player" : "Collapse music player");
     }
     let collapseTouched = false;

@@ -1,4 +1,4 @@
-# Wency portfolio ? GitHub Pages staging
+# Wency portfolio — GitHub Pages
 
 This is a deployable static root based on the current personalized Wency
 portfolio capture. The original local project remains unchanged.
@@ -18,9 +18,13 @@ status may still be 404. .nojekyll disables Jekyll processing.
 
 ## Public-hosting limits and rights
 
-- Three C418 MP3 files are not included; only licensed or otherwise
-  authorized files should be made publicly accessible. The music widget
-  will show its missing-audio state until audio is properly hosted.
+- The public ambient playlist now contains Scott Buckley's **Aurora**,
+  **Snowfall**, and **Cirrus**, downloaded directly from the artist's
+  Creative Commons music library under CC BY 4.0. Visible per-track
+  attribution, source and license links are provided in
+  [music-credits.html](music-credits.html) and via the player's Music
+  Credits link. The three C418 tracks remain local and were not
+  published.
 - Captured Harshit personal gallery photos, experiment media, old project
   screenshots, banners and unrelated music are deliberately omitted.
   Some legacy compiled functions still mention their URLs, but the
@@ -39,12 +43,14 @@ status may still be 404. .nojekyll disables Jekyll processing.
 
 Included: owner profile images, updated resume, two owned repository
 project SVG thumbnails, core React bundle, CSS, README quicklook,
-Minecraft biome selection, ambient-player UI code, HTML and SPA fallback.
+Minecraft biome selection, ambient-player UI code, CC BY 4.0 music,
+music credits, HTML and SPA fallback.
 
 ## Manual checks
 
 Verify routes /, /projects, /experience and /contact, image loading,
 resume link, project SVG animation, README popup, night/day mode, and
-absence of captured original-owner media. Because audio MP3s are omitted,
-the player should not make sound or claim to play music. Browser
-autoplay restrictions still apply after any later licensed audio setup.
+absence of captured original-owner media. Verify all three licensed MP3s
+load, Music Credits opens and lists the tracks, the player starts after an
+eligible user interaction where browser autoplay is blocked, Next works,
+and full songs shuffle on completion.
