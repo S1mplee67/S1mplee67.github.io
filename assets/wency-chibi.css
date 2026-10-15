@@ -1,0 +1,26 @@
+/* Waving chibi: motion is limited to the selected hero portrait.
+   The original photo uses the same layout without any animation. */
+img.wency-chibi-animated {
+  transform-origin: 50% 78%;
+  animation: wency-chibi-idle 4.6s ease-in-out infinite;
+  will-change: transform;
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 15%));
+}
+
+@keyframes wency-chibi-idle {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg) scale(1.015); }
+  12% { transform: translate3d(0, -2px, 0) rotate(1.6deg) scale(1.025); }
+  20% { transform: translate3d(0, -3px, 0) rotate(-1.5deg) scale(1.03); }
+  27% { transform: translate3d(0, -2px, 0) rotate(1.4deg) scale(1.025); }
+  36% { transform: translate3d(0, 0, 0) rotate(-1deg) scale(1.015); }
+  64% { transform: translate3d(0, 2px, 0) rotate(.1deg) scale(.99); }
+  81% { transform: translate3d(0, 0, 0) rotate(.4deg) scale(1.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  img.wency-chibi-animated {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto;
+  }
+}
