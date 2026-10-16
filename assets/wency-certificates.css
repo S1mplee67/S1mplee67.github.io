@@ -1,0 +1,155 @@
+/* Portfolio credential gallery: follow existing vars, spacing and typography. */
+#experience .wency-certificates {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 760px;
+  margin: 40px auto 24px;
+  padding: 24px 20px;
+  border-left: 1px dashed var(--line);
+  border-right: 1px dashed var(--line);
+  color: var(--fg);
+}
+#experience .wency-certificates-header {
+  margin-bottom: 20px;
+}
+#experience .wency-certificates-heading {
+  margin: 0 0 9px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(27px, 4vw, 35px);
+  line-height: 1.15;
+  letter-spacing: -.015em;
+}
+#experience .wency-certificates-intro {
+  margin: 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+#experience .wency-certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+#experience .wency-certificate-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  overflow: hidden;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+#experience .wency-certificate-card:hover {
+  border-color: var(--muted);
+  background: var(--hover);
+}
+#experience .wency-certificate-image-link {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 176px;
+  overflow: hidden;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  background: #1f2322;
+}
+#experience .wency-certificate-image {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  filter: brightness(.92);
+  transition: transform .2s ease, filter .2s ease;
+}
+#experience .wency-certificate-image-link:hover img {
+  transform: scale(1.025);
+  filter: brightness(1);
+}
+#experience .wency-certificate-details {
+  padding: 17px 17px 19px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#experience .wency-certificate-type {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  text-transform: uppercase;
+  letter-spacing: .095em;
+  font-size: 9px;
+  color: var(--soft);
+}
+#experience .wency-certificate-name {
+  margin: 8px 0 9px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+#experience .wency-certificate-issuer,
+#experience .wency-certificate-date,
+#experience .wency-certificate-description {
+  margin: 0 0 6px;
+  font-size: 11.5px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+#experience .wency-certificate-date {
+  color: var(--fg);
+  font-weight: 550;
+}
+#experience .wency-certificate-description {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+#experience .wency-certificate-document {
+  margin-top: auto;
+  display: inline-flex;
+  padding: 8px 0 0;
+  color: var(--fg);
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+}
+#experience .wency-certificate-document:hover {
+  text-decoration-color: currentColor;
+}
+#experience .wency-certificate-document:focus-visible,
+#experience .wency-certificate-image-link:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+html.light #experience .wency-certificate-image-link {
+  background: #e7e9e6;
+}
+html.light #experience .wency-certificate-image {
+  filter: none;
+}
+@media (max-width: 590px) {
+  #experience .wency-certificates {
+    margin-top: 31px;
+  }
+  #experience .wency-certificates-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+  #experience .wency-certificate-image-link {
+    height: 188px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #experience .wency-certificate-card,
+  #experience .wency-certificate-image {
+    transition: none;
+  }
+  #experience .wency-certificate-image-link:hover img {
+    transform: none;
+  }
+}
